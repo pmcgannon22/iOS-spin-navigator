@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6622355B1975CD5A0052A9CA /* MSBubbleIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6622355A1975CD5A0052A9CA /* MSBubbleIconView.m */; };
+		6622355F1975D3DD0052A9CA /* messenger-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6622355E1975D3DD0052A9CA /* messenger-icon.png */; };
+		662235611975DD100052A9CA /* gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 662235601975DD100052A9CA /* gray.png */; };
 		66A1100F1974536800D547C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A1100E1974536800D547C4 /* Foundation.framework */; };
 		66A110111974536800D547C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A110101974536800D547C4 /* CoreGraphics.framework */; };
 		66A110131974536800D547C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A110121974536800D547C4 /* UIKit.framework */; };
@@ -19,6 +22,10 @@
 		66A1102A1974536800D547C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A110121974536800D547C4 /* UIKit.framework */; };
 		66A110321974536800D547C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66A110301974536800D547C4 /* InfoPlist.strings */; };
 		66A110341974536800D547C4 /* MSBubbleNavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A110331974536800D547C4 /* MSBubbleNavigationTests.m */; };
+		66A1103E1974542A00D547C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A1103D1974542A00D547C4 /* Main.storyboard */; };
+		66A110411974549D00D547C4 /* MSBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A110401974549D00D547C4 /* MSBubbleView.m */; };
+		66A1104319748BCE00D547C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A1104219748BCE00D547C4 /* QuartzCore.framework */; };
+		66A1104619759AA700D547C4 /* MSBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1104519759AA700D547C4 /* MSBubbleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		662235591975CD5A0052A9CA /* MSBubbleIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBubbleIconView.h; sourceTree = "<group>"; };
+		6622355A1975CD5A0052A9CA /* MSBubbleIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBubbleIconView.m; sourceTree = "<group>"; };
+		6622355E1975D3DD0052A9CA /* messenger-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messenger-icon.png"; sourceTree = "<group>"; };
+		662235601975DD100052A9CA /* gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray.png; sourceTree = "<group>"; };
 		66A1100B1974536800D547C4 /* MSBubbleNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSBubbleNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A1100E1974536800D547C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66A110101974536800D547C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +59,12 @@
 		66A1102F1974536800D547C4 /* MSBubbleNavigationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MSBubbleNavigationTests-Info.plist"; sourceTree = "<group>"; };
 		66A110311974536800D547C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		66A110331974536800D547C4 /* MSBubbleNavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSBubbleNavigationTests.m; sourceTree = "<group>"; };
+		66A1103D1974542A00D547C4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		66A1103F1974549D00D547C4 /* MSBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBubbleView.h; sourceTree = "<group>"; };
+		66A110401974549D00D547C4 /* MSBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBubbleView.m; sourceTree = "<group>"; };
+		66A1104219748BCE00D547C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		66A1104419759AA700D547C4 /* MSBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBubbleViewController.h; sourceTree = "<group>"; };
+		66A1104519759AA700D547C4 /* MSBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBubbleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A1104319748BCE00D547C4 /* QuartzCore.framework in Frameworks */,
 				66A110111974536800D547C4 /* CoreGraphics.framework in Frameworks */,
 				66A110131974536800D547C4 /* UIKit.framework in Frameworks */,
 				66A1100F1974536800D547C4 /* Foundation.framework in Frameworks */,
@@ -74,9 +92,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6622355C1975D3260052A9CA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6622355D1975D3320052A9CA /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6622355D1975D3320052A9CA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				662235601975DD100052A9CA /* gray.png */,
+				6622355E1975D3DD0052A9CA /* messenger-icon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		66A110021974536800D547C4 = {
 			isa = PBXGroup;
 			children = (
+				6622355C1975D3260052A9CA /* Resources */,
 				66A110141974536800D547C4 /* MSBubbleNavigation */,
 				66A1102D1974536800D547C4 /* MSBubbleNavigationTests */,
 				66A1100D1974536800D547C4 /* Frameworks */,
@@ -96,6 +132,7 @@
 		66A1100D1974536800D547C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66A1104219748BCE00D547C4 /* QuartzCore.framework */,
 				66A1100E1974536800D547C4 /* Foundation.framework */,
 				66A110101974536800D547C4 /* CoreGraphics.framework */,
 				66A110121974536800D547C4 /* UIKit.framework */,
@@ -109,6 +146,13 @@
 			children = (
 				66A1101D1974536800D547C4 /* MSAppDelegate.h */,
 				66A1101E1974536800D547C4 /* MSAppDelegate.m */,
+				66A1103D1974542A00D547C4 /* Main.storyboard */,
+				66A1104419759AA700D547C4 /* MSBubbleViewController.h */,
+				66A1104519759AA700D547C4 /* MSBubbleViewController.m */,
+				66A1103F1974549D00D547C4 /* MSBubbleView.h */,
+				66A110401974549D00D547C4 /* MSBubbleView.m */,
+				662235591975CD5A0052A9CA /* MSBubbleIconView.h */,
+				6622355A1975CD5A0052A9CA /* MSBubbleIconView.m */,
 				66A110201974536800D547C4 /* Images.xcassets */,
 				66A110151974536800D547C4 /* Supporting Files */,
 			);
@@ -220,7 +264,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A1103E1974542A00D547C4 /* Main.storyboard in Resources */,
+				662235611975DD100052A9CA /* gray.png in Resources */,
 				66A110191974536800D547C4 /* InfoPlist.strings in Resources */,
+				6622355F1975D3DD0052A9CA /* messenger-icon.png in Resources */,
 				66A110211974536800D547C4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A110411974549D00D547C4 /* MSBubbleView.m in Sources */,
 				66A1101F1974536800D547C4 /* MSAppDelegate.m in Sources */,
+				6622355B1975CD5A0052A9CA /* MSBubbleIconView.m in Sources */,
+				66A1104619759AA700D547C4 /* MSBubbleViewController.m in Sources */,
 				66A1101B1974536800D547C4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +490,7 @@
 				66A110391974536900D547C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66A1103A1974536900D547C4 /* Build configuration list for PBXNativeTarget "MSBubbleNavigationTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +499,7 @@
 				66A1103C1974536900D547C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

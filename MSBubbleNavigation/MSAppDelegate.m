@@ -12,10 +12,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [mainWindow makeKeyAndVisible];
+    
+    MSBubbleView *bubble = [[MSBubbleView alloc] initWithWindow:mainWindow];
+    
     return YES;
 }
 
