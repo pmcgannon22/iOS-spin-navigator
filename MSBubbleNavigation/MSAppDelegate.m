@@ -15,9 +15,23 @@
     UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
     UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     [mainWindow makeKeyAndVisible];
+    float y = 100;
+    float w = 150;
     
-    MSBubbleView *bubble = [[MSBubbleView alloc] initWithWindow:mainWindow];
+    UIView *bubbleWrap = [[UIView alloc] initWithFrame:CGRectMake(mainWindow.frame.size.width - w, y, w, 175)];
+    bubbleWrap.backgroundColor = [UIColor blackColor];
+    bubbleWrap.alpha = 0.25;
+    [mainWindow addSubview:bubbleWrap];
+    [mainWindow bringSubviewToFront:bubbleWrap];
+
+    MSMainBubbleView *bubble = [[MSMainBubbleView alloc] initWithFrame:CGRectMake(w-20, 40, 70, 70) icon:@"gray.png"];
+    UIPanGestureRecognizer *pgr = [[UIPanGestureRecognizer alloc] initWithTarget:bubble action:@selector(handlePan:)];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:bubble action:@selector(bubbleTapped:)];
+    [bubble addGestureRecognizer:tap];
+    pgr.cancelsTouchesInView = NO;
+    [bubbleWrap addGestureRecognizer:pgr];
+    [bubbleWrap addSubview:bubble];
     return YES;
 }
 

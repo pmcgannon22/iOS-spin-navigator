@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CAKeyframeAnimation+Polar.h"
 
 @interface MSBubbleIconView : UIView
 

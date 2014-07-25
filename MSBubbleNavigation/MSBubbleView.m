@@ -7,10 +7,12 @@
 //
 
 #import "MSBubbleView.h"
+#import "math.h"
+#import "CAKeyframeAnimation+Polar.h"
 
 static BOOL active;
 
-@implementation MSBubbleView
+@implementation MSBubbleView 
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -21,7 +23,23 @@ static BOOL active;
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame andIcon:(NSString*)iconImageName
+
+
+// Initialize the center bubble
+- (id)initWithWindow:(UIWindow*)window
+{
+    CGFloat radius = 35;
+    CGFloat x = window.bounds.size.width - radius + 10;
+    CGFloat y = 150;
+    self = [self initWithFrame:CGRectMake(x, y, radius*2, radius*2) icon:@"gray.png"];
+    if(self) {
+        [window addSubview:self];
+    }
+
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame icon:(NSString*)iconImageName
 {
     self = [super initWithFrame:frame];
     if(self) {
@@ -31,37 +49,35 @@ static BOOL active;
         _icon.backgroundColor = [UIColor clearColor];
         
         [_icon setIconImage:[UIImage imageNamed:iconImageName]];
-        _icon.alpha = 0.6;
         _icon.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
         [self addSubview:_icon];
     }
     return self;
 }
 
-// Initialize the center bubble
-- (id)initWithWindow:(UIWindow*)window
-{
-    CGFloat radius = 35;
-    CGFloat x = window.bounds.size.width - radius + 10;
-    CGFloat y = 150;
-    self = [self initWithFrame:CGRectMake(x, y, radius*2, radius*2) andIcon:@"gray.png"];
-    if(self) {
-        [window addSubview:self];
-    }
-
-    return self;
-}
-
 + (BOOL) isActive { return active; }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    if(flag) {
+        NSValue* l = ((CAKeyframeAnimation*)anim).values.lastObject;
+        CGPoint pt = [l CGPointValue];
+        CGRect f = self.frame;
+        pt.x -= 20;
+        pt.y -= 20;
+        f.origin = pt;
+        self.frame = f;
+    }
+}
+
+- (void) bubbleTapped: (UITapGestureRecognizer*) recognizer
 {
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    /*
     NSSet *allTouches = [event allTouches];
     
     switch([allTouches count])
@@ -71,33 +87,9 @@ static BOOL active;
             CGPoint point = [touch locationInView:self];
             
             
-            if (CGRectContainsPoint(self.bounds, point) && ![MSBubbleView isActive]) {
-                [UIView animateWithDuration:0.3f
-                                    delay:0.1
-                                    options: UIViewAnimationCurveEaseIn
-                                    animations:^{
-                                     CGRect frame = self.frame;
-                                     frame.origin.x = self.frame.origin.x - 50;
-                                     _icon.alpha = 1.0;
-                                     self.frame = frame;
-                                 }
-                                 completion: ^(BOOL finished)
-                                {
-                                    active = true;
-                                    MSBubbleView *newBubble = [[MSBubbleView alloc] initWithFrame:CGRectMake(20, -40, 40, 40) andIcon:@"messenger-icon.png"];
-                                    
-                                    [self addSubview:newBubble];
-                                    
-                                    MSBubbleView *newBubble2 = [[MSBubbleView alloc] initWithFrame:CGRectMake(-35, -20, 40, 40) andIcon:@"messenger-icon.png"];
-                                    [self addSubview:newBubble2];
-                                    
-                                    MSBubbleView *newBubble3 = [[MSBubbleView alloc] initWithFrame:CGRectMake(-35, 45, 40, 40) andIcon:@"messenger-icon.png"];
-                                    [self addSubview:newBubble3];
-                                    
-                                    MSBubbleView *newBubble4 = [[MSBubbleView alloc] initWithFrame:CGRectMake(20, 70, 40, 40) andIcon:@"messenger-icon.png"];
-                                    [self addSubview:newBubble4];
-                                }];
-            } else if ([MSBubbleView isActive]) {
+
+            
+            if (0) {
                 active = false;
                 [UIView animateWithDuration:0.3f
                                       delay:0.1
@@ -110,7 +102,11 @@ static BOOL active;
                                  }
                                  completion: ^(BOOL finished)
                                 {
-                                    [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+     
+                                    for (MSBubbleView* b in _bubbles) {
+                                        [b removeFromSuperview];
+                                    }
+                                    [_bubbles removeAllObjects];
                                 }];
             }
             
@@ -118,7 +114,7 @@ static BOOL active;
             NSLog(@"y=%f", point.y);
         }
 
-    }
+    }*/
 }
 
 

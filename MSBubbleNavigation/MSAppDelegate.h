@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MSBubbleView.h"
+#import "MSMainBubbleView.h"
 
 @interface MSAppDelegate : UIResponder <UIApplicationDelegate>
 

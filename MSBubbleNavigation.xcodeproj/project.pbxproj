@@ -26,6 +26,9 @@
 		66A110411974549D00D547C4 /* MSBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A110401974549D00D547C4 /* MSBubbleView.m */; };
 		66A1104319748BCE00D547C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A1104219748BCE00D547C4 /* QuartzCore.framework */; };
 		66A1104619759AA700D547C4 /* MSBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A1104519759AA700D547C4 /* MSBubbleViewController.m */; };
+		66FAA97C197EE33100911B69 /* CAKeyframeAnimation+Polar.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FAA97B197EE33100911B69 /* CAKeyframeAnimation+Polar.m */; };
+		66FAA97F1982E11A00911B69 /* MSMainBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FAA97E1982E11A00911B69 /* MSMainBubbleView.m */; };
+		66FAA9821982E26300911B69 /* MSMiniBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FAA9811982E26300911B69 /* MSMiniBubbleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,12 @@
 		66A1104219748BCE00D547C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		66A1104419759AA700D547C4 /* MSBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBubbleViewController.h; sourceTree = "<group>"; };
 		66A1104519759AA700D547C4 /* MSBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBubbleViewController.m; sourceTree = "<group>"; };
+		66FAA97A197EE33100911B69 /* CAKeyframeAnimation+Polar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAKeyframeAnimation+Polar.h"; sourceTree = "<group>"; };
+		66FAA97B197EE33100911B69 /* CAKeyframeAnimation+Polar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAKeyframeAnimation+Polar.m"; sourceTree = "<group>"; };
+		66FAA97D1982E11A00911B69 /* MSMainBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainBubbleView.h; sourceTree = "<group>"; };
+		66FAA97E1982E11A00911B69 /* MSMainBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainBubbleView.m; sourceTree = "<group>"; };
+		66FAA9801982E26300911B69 /* MSMiniBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMiniBubbleView.h; sourceTree = "<group>"; };
+		66FAA9811982E26300911B69 /* MSMiniBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMiniBubbleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,10 +160,16 @@
 				66A1104519759AA700D547C4 /* MSBubbleViewController.m */,
 				66A1103F1974549D00D547C4 /* MSBubbleView.h */,
 				66A110401974549D00D547C4 /* MSBubbleView.m */,
+				66FAA97A197EE33100911B69 /* CAKeyframeAnimation+Polar.h */,
+				66FAA97B197EE33100911B69 /* CAKeyframeAnimation+Polar.m */,
 				662235591975CD5A0052A9CA /* MSBubbleIconView.h */,
 				6622355A1975CD5A0052A9CA /* MSBubbleIconView.m */,
 				66A110201974536800D547C4 /* Images.xcassets */,
 				66A110151974536800D547C4 /* Supporting Files */,
+				66FAA97D1982E11A00911B69 /* MSMainBubbleView.h */,
+				66FAA97E1982E11A00911B69 /* MSMainBubbleView.m */,
+				66FAA9801982E26300911B69 /* MSMiniBubbleView.h */,
+				66FAA9811982E26300911B69 /* MSMiniBubbleView.m */,
 			);
 			path = MSBubbleNavigation;
 			sourceTree = "<group>";
@@ -288,8 +303,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				66A110411974549D00D547C4 /* MSBubbleView.m in Sources */,
+				66FAA9821982E26300911B69 /* MSMiniBubbleView.m in Sources */,
 				66A1101F1974536800D547C4 /* MSAppDelegate.m in Sources */,
 				6622355B1975CD5A0052A9CA /* MSBubbleIconView.m in Sources */,
+				66FAA97F1982E11A00911B69 /* MSMainBubbleView.m in Sources */,
+				66FAA97C197EE33100911B69 /* CAKeyframeAnimation+Polar.m in Sources */,
 				66A1104619759AA700D547C4 /* MSBubbleViewController.m in Sources */,
 				66A1101B1974536800D547C4 /* main.m in Sources */,
 			);

@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "MSBubbleIconView.h"
 
-
 @interface MSBubbleView : UIView
 
 + (BOOL) isActive;
 
 @property (strong, nonatomic) MSBubbleIconView *icon;
 
+- (id)initWithFrame:(CGRect)frame icon:(NSString*)iconImageName;
+
 - (id)initWithWindow:(UIWindow*)window;
+
+- (void) bubbleTapped: (UITapGestureRecognizer*) recognizer;
 
 @end
