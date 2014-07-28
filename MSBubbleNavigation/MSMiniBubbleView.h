@@ -19,6 +19,8 @@ typedef void (^BubbleClickBlock)();
 
 - (void) changeAngle:(CGFloat)d_theta center:(CGPoint)center radius:(float)r;
 
+- (void) moveToAngle:(CGFloat)d_theta center:(CGPoint)center radius:(float)r;
+
 - (CGPoint) calculatePosition:(CGPoint)center radius:(float)r;
 
 - (void) animateAroundCenter:(CGPoint)center radius:(CGFloat)radius d_theta:(CGFloat)d_theta;

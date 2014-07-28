@@ -35,14 +35,14 @@
 
 - (void)addActionIcon:(NSString*)icon tapCommand:(BubbleClickBlock)command
 {
-    NSUInteger c = _bubbles.count;
-    float step = M_PI/(c+1);
+    NSUInteger c = MAX(_bubbles.count, 1);
+    float step = M_PI/(c);
     //FIX TO NOT BE DTHETA
     for(int i=0; i<_bubbles.count; i++) {
-        [_bubbles[i] changeAngle:i*step+M_PI/2 center:CGPointMake(12, 15) radius:55];
+        [_bubbles[i] moveToAngle:i*step+M_PI/2 center:CGPointMake(12, 15) radius:55];
     }
     
-    MSMiniBubbleView *action = [[MSMiniBubbleView alloc] initAtAngle:(c*step) icon:icon center:CGPointMake(12, 15) radius:55];
+    MSMiniBubbleView *action = [[MSMiniBubbleView alloc] initAtAngle:(c*step + M_PI/2) icon:icon center:CGPointMake(12, 15) radius:55];
     action.tapCommand = command;
     
     [_bubbles addObject:action];
@@ -71,7 +71,7 @@
 
 - (void) bubbleTapped: (UITapGestureRecognizer*) recognizer
 {
-    /*
+    
     [UIView animateWithDuration:0.3f
                           delay:0.1
                         options: UIViewAnimationCurveEaseIn
@@ -95,9 +95,7 @@
                             [b setHidden:!self->active];
                         }
                     }
-                ];*/
-    [self notifyActive];
-    
+                ];
 }
 
 - (IBAction)handlePan:(UIPanGestureRecognizer*) recognizer {

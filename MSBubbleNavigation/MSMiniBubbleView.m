@@ -54,6 +54,14 @@
      self.frame = frame;
 }
 
+- (void)moveToAngle:(CGFloat)theta center:(CGPoint)center radius:(float)r
+{
+    CGRect frame = self.frame;
+    self->angle = theta;
+    frame.origin = [self calculatePosition:center radius:r];
+    self.frame = frame;
+}
+
 - (void)animateAroundCenter:(CGPoint)center radius:(CGFloat)radius d_theta:(CGFloat)d_theta
 {
     KeyframePolarBlock func = ^CGPoint(double ang) {

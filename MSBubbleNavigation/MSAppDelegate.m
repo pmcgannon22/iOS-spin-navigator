@@ -13,18 +13,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
-    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     [mainWindow makeKeyAndVisible];
-    float y = 225;
+    float y = 150;
     float w = [mainWindow bounds].size.width;
-    
-    UIView *bubbleWrap = [[UIView alloc] initWithFrame:CGRectMake(mainWindow.frame.size.width - w, y, w, 175)];
-    bubbleWrap.backgroundColor = [UIColor blackColor];
-    bubbleWrap.alpha = 0.25;
-    [mainWindow addSubview:bubbleWrap];
-    [mainWindow bringSubviewToFront:bubbleWrap];
 
-    MSMainBubbleView *bubble = [[MSMainBubbleView alloc] initWithFrame:CGRectMake(w-20, 40, 70, 70) icon:@"gray.png"];
+
+    MSMainBubbleView *bubble = [[MSMainBubbleView alloc] initWithFrame:CGRectMake(w-20, y, 70, 70) icon:@"gray.png"];
     UIPanGestureRecognizer *pgr = [[UIPanGestureRecognizer alloc] initWithTarget:bubble action:@selector(handlePan:)];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:bubble action:@selector(bubbleTapped:)];
@@ -45,6 +39,11 @@
     [bubble addActionIcon:@"messenger-icon" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
+    
+    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+        NSLog(@"asdfasdf");
+    }];
+    
     return YES;
 }
 
