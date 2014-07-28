@@ -15,6 +15,8 @@ typedef void (^BubbleClickBlock)();
 
 @property (strong, nonatomic) NSMutableArray* bubbles;
 
+- (void) notifyActive;
+
 - (IBAction)handlePan:(UIPanGestureRecognizer*) recognizer;
 
 - (void)addActionIcon:(NSString*)icon tapCommand:(BubbleClickBlock)command;

@@ -10,8 +10,6 @@
 #import "math.h"
 #import "CAKeyframeAnimation+Polar.h"
 
-static BOOL active;
-
 @implementation MSBubbleView 
 
 

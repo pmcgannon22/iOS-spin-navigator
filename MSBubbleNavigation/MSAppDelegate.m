@@ -15,8 +15,8 @@
     UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
     UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     [mainWindow makeKeyAndVisible];
-    float y = 100;
-    float w = 150;
+    float y = 225;
+    float w = [mainWindow bounds].size.width;
     
     UIView *bubbleWrap = [[UIView alloc] initWithFrame:CGRectMake(mainWindow.frame.size.width - w, y, w, 175)];
     bubbleWrap.backgroundColor = [UIColor blackColor];
@@ -30,9 +30,11 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:bubble action:@selector(bubbleTapped:)];
     [bubble addGestureRecognizer:tap];
     pgr.cancelsTouchesInView = NO;
-    [bubbleWrap addGestureRecognizer:pgr];
-    [bubbleWrap addSubview:bubble];
+    [mainWindow addGestureRecognizer:pgr];
+
+    [mainWindow addSubview:bubble];
     [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+        
         NSLog(@"asdfasdf");
     }];
     

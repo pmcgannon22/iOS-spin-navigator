@@ -59,8 +59,19 @@
     return [super hitTest:point withEvent:event];
 }
 
+- (void) notifyActive
+{
+    CABasicAnimation *notifyAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    notifyAnimation.duration = 0.5f;
+    notifyAnimation.autoreverses = YES;
+    notifyAnimation.repeatCount = 2;
+    notifyAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+    [self.icon.layer addAnimation:notifyAnimation forKey:@"notifyActive"];
+}
+
 - (void) bubbleTapped: (UITapGestureRecognizer*) recognizer
 {
+    /*
     [UIView animateWithDuration:0.3f
                           delay:0.1
                         options: UIViewAnimationCurveEaseIn
@@ -77,14 +88,15 @@
                          self.frame = frame;
                      }
                      completion: ^(BOOL finished)
-     {
-         self->active = !self->active;
-         for(MSMiniBubbleView* b in _bubbles)
-         {
-             [b setHidden:!self->active];
-         }
-     }
-     ];
+                    {
+                        self->active = !self->active;
+                        for(MSMiniBubbleView* b in _bubbles)
+                        {
+                            [b setHidden:!self->active];
+                        }
+                    }
+                ];*/
+    [self notifyActive];
     
 }
 
