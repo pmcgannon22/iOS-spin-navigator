@@ -11,8 +11,6 @@
 
 @interface MSBubbleView : UIView
 
-+ (BOOL) isActive;
-
 @property (strong, nonatomic) MSBubbleIconView *icon;
 
 - (id)initWithFrame:(CGRect)frame icon:(NSString*)iconImageName;

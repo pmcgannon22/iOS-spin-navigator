@@ -32,6 +32,17 @@
     pgr.cancelsTouchesInView = NO;
     [bubbleWrap addGestureRecognizer:pgr];
     [bubbleWrap addSubview:bubble];
+    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+        NSLog(@"asdfasdf");
+    }];
+    
+    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+        NSLog(@"asdfasdf");
+    }];
+    
+    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+        NSLog(@"asdfasdf");
+    }];
     return YES;
 }
 

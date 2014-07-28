@@ -33,16 +33,14 @@
 
 - (void) bubbleTapped: (UITapGestureRecognizer*) recognizer
 {
-    NSLog(@"minitap");
+    if(self->_tapCommand) {
+        self->_tapCommand();
+    }
 }
 
 - (CGPoint) calculatePosition:(CGPoint)center radius:(float)r
 {
     float ang =   fmod(self->angle,2 * M_PI);
-    /*
-     if(ang > (3*M_PI/2) || ang < M_PI/2) {
-     ang += M_PI;
-     }*/
     float x = r * cos(ang) + center.x;
     float y = r * -1 * sin(ang) + center.y;
     return CGPointMake(x, y);
@@ -66,12 +64,10 @@
     };
     
     if (self.layer) {
-        NSLog(@"d_theta=%f", d_theta);
         if(d_theta < 0)
             d_theta = d_theta < 0 ? MAX(d_theta, -1*M_PI) : MIN(d_theta, M_PI);
         
         double endAngle = (self->angle + d_theta*4);
-        //endAngle = endAngle + 2*M_PI - fmod(endAngle, 2*M_PI) + b->angle;
         CAAnimation *drop = [CAKeyframeAnimation
                              animationWithKeyPath:@"position"
                              function:func
@@ -84,14 +80,5 @@
     }
     
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

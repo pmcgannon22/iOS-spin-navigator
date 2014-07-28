@@ -13,7 +13,7 @@ typedef void (^BubbleClickBlock)();
 
 @interface MSMiniBubbleView : MSBubbleView
 
-@property (weak, nonatomic) BubbleClickBlock tapCommand;
+@property (strong, nonatomic) BubbleClickBlock tapCommand;
 
 - (id)initAtAngle:(CGFloat)angle icon:(NSString*)iconImageName center:(CGPoint)center radius:(CGFloat)r;
 
