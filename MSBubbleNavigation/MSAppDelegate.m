@@ -21,14 +21,17 @@
     MSMainBubbleView *bubble = [[MSMainBubbleView alloc] initWithFrame:CGRectMake(w-20, y, 70, 70) icon:@"gray.png"];
     UIPanGestureRecognizer *pgr = [[UIPanGestureRecognizer alloc] initWithTarget:bubble action:@selector(handlePan:)];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:bubble action:@selector(bubbleTapped:)];
-    [bubble addGestureRecognizer:tap];
+
     pgr.cancelsTouchesInView = NO;
     [mainWindow addGestureRecognizer:pgr];
 
     [mainWindow addSubview:bubble];
     [bubble addActionIcon:@"messenger-icon" tapCommand:^{
         
+        NSLog(@"asdfasdf");
+    }];
+    
+    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
     

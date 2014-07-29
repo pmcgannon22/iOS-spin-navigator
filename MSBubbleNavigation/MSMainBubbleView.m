@@ -27,8 +27,8 @@
     self->active = NO;
     if(self) {
         self.icon.alpha = 0.6;
-        _bubbles = [[NSMutableArray alloc] init] ;
-
+        _bubbles = [[NSMutableArray alloc] init];
+        [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bubbleTapped:)]];
     }
     return self;
 }
@@ -37,7 +37,7 @@
 {
     NSUInteger c = MAX(_bubbles.count, 1);
     float step = M_PI/(c);
-    //FIX TO NOT BE DTHETA
+
     for(int i=0; i<_bubbles.count; i++) {
         [_bubbles[i] moveToAngle:i*step+M_PI/2 center:CGPointMake(12, 15) radius:55];
     }
@@ -46,6 +46,7 @@
     action.tapCommand = command;
     
     [_bubbles addObject:action];
+    [action setHidden:YES];
     [self addSubview:action];
 }
 

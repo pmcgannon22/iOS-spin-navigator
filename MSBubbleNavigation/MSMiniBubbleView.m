@@ -62,6 +62,11 @@
     self.frame = frame;
 }
 
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    [self moveToAngle:self->angle center:CGPointMake(12, 15) radius:55];
+}
+
 - (void)animateAroundCenter:(CGPoint)center radius:(CGFloat)radius d_theta:(CGFloat)d_theta
 {
     KeyframePolarBlock func = ^CGPoint(double ang) {
