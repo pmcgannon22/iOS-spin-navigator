@@ -13,12 +13,14 @@ typedef void (^BubbleClickBlock)();
 
 @interface MSMainBubbleView : MSBubbleView
 
-@property (strong, nonatomic) NSMutableArray* bubbles;
+@property (strong, nonatomic) NSMutableDictionary* bubbles;
 
 - (void) notifyActive;
 
 - (IBAction)handlePan:(UIPanGestureRecognizer*) recognizer;
 
-- (void)addActionIcon:(NSString*)icon tapCommand:(BubbleClickBlock)command;
+- (void)addActionIcon:(NSString*)icon key:(NSString*)name tapCommand:(BubbleClickBlock)command;
+
+- (void) activateIcon:(NSString*)name;
 
 @end

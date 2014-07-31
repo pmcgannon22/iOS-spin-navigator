@@ -27,27 +27,37 @@
     self->active = NO;
     if(self) {
         self.icon.alpha = 0.6;
-        _bubbles = [[NSMutableArray alloc] init];
+        _bubbles = [[NSMutableDictionary alloc] init];
         [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bubbleTapped:)]];
+        [self setHidden:YES];
     }
     return self;
 }
 
-- (void)addActionIcon:(NSString*)icon tapCommand:(BubbleClickBlock)command
+- (void)addActionIcon:(NSString*)icon key:(NSString*)name tapCommand:(BubbleClickBlock)command
 {
     NSUInteger c = MAX(_bubbles.count, 1);
     float step = M_PI/(c);
-
-    for(int i=0; i<_bubbles.count; i++) {
-        [_bubbles[i] moveToAngle:i*step+M_PI/2 center:CGPointMake(12, 15) radius:55];
+    int i = 0;
+    for(id key in _bubbles) {
+        [_bubbles[key] moveToAngle:i*step+M_PI/2 center:CGPointMake(12, 15) radius:55];
+        i++;
     }
     
     MSMiniBubbleView *action = [[MSMiniBubbleView alloc] initAtAngle:(c*step + M_PI/2) icon:icon center:CGPointMake(12, 15) radius:55];
     action.tapCommand = command;
     
-    [_bubbles addObject:action];
+    _bubbles[name] = action;
     [action setHidden:YES];
     [self addSubview:action];
+}
+
+- (void) activateIcon:(NSString*)name
+{
+    if ([_bubbles objectForKey:name])
+    {
+        [_bubbles[name] setActive:YES];
+    }
 }
 
 - (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event
@@ -82,6 +92,10 @@
                              frame.origin.x = self.frame.origin.x + 50;
                              self.icon.alpha = 1.0;
                          } else {
+                             for(id key in _bubbles)
+                             {
+                                 [_bubbles[key] setActive:NO];
+                             }
                              frame.origin.x = self.frame.origin.x - 50;
                              self.icon.alpha = 0.6;
                          }
@@ -91,9 +105,9 @@
                      completion: ^(BOOL finished)
                     {
                         self->active = !self->active;
-                        for(MSMiniBubbleView* b in _bubbles)
+                        for(id key in _bubbles)
                         {
-                            [b setHidden:!self->active];
+                            [_bubbles[key] setHidden:!self->active];
                         }
                     }
                 ];
@@ -102,14 +116,14 @@
 - (IBAction)handlePan:(UIPanGestureRecognizer*) recognizer {
     CGPoint translation = [recognizer translationInView:self];
     
-    for (MSMiniBubbleView* b in _bubbles) {
+    for (id key in _bubbles) {
         if(recognizer.state == UIGestureRecognizerStateEnded) {
             CGPoint velocity = [recognizer velocityInView:self];
             float d_theta = -1 * velocity.y/(110*M_PI);
-            [b animateAroundCenter:CGPointMake(35, 35) radius:55 d_theta:d_theta];
+            [_bubbles[key] animateAroundCenter:CGPointMake(35, 35) radius:55 d_theta:d_theta];
         } else {
             float d_theta = translation.y/(110*M_PI);
-            [b changeAngle:d_theta center:CGPointMake(12, 15) radius:55];
+            [_bubbles[key] changeAngle:d_theta center:CGPointMake(12, 15) radius:55];
         }
     }
     if(recognizer.state == UIGestureRecognizerStateEnded) {

@@ -24,16 +24,22 @@
 - (id)initAtAngle:(CGFloat)ang icon:(NSString*)iconImageName center:(CGPoint)center radius:(CGFloat)r
 {
     self = [super initWithFrame:CGRectMake(r * cos(ang) + center.x, r * sin(ang + M_PI) + center.y, 40, 40) icon:iconImageName];
-    [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bubbleTapped:)]];
-    if(self) {
+    if (self) {
         self->angle = ang;
+        [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bubbleTapped:)]];
+        //self.icon.alpha = 0.5;
     }
     return self;
 }
 
+- (void) setActive:(BOOL)isActive
+{
+    self.icon.alpha = isActive ? 1.0 : 0.5;
+}
+
 - (void) bubbleTapped: (UITapGestureRecognizer*) recognizer
 {
-    if(self->_tapCommand) {
+    if (self->_tapCommand) {
         self->_tapCommand();
     }
 }

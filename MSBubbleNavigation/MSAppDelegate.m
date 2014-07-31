@@ -20,33 +20,33 @@
 
     MSMainBubbleView *bubble = [[MSMainBubbleView alloc] initWithFrame:CGRectMake(w-20, y, 70, 70) icon:@"gray.png"];
     UIPanGestureRecognizer *pgr = [[UIPanGestureRecognizer alloc] initWithTarget:bubble action:@selector(handlePan:)];
-    
+    [bubble setHidden:NO];
 
     pgr.cancelsTouchesInView = NO;
     [mainWindow addGestureRecognizer:pgr];
 
     [mainWindow addSubview:bubble];
-    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+    [bubble addActionIcon:@"messenger-icon" key:@"first" tapCommand:^{
         
         NSLog(@"asdfasdf");
     }];
     
-    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+    [bubble addActionIcon:@"messenger-icon" key:@"second" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
     
-    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+    [bubble addActionIcon:@"messenger-icon" key:@"third" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
     
-    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+    [bubble addActionIcon:@"messenger-icon" key:@"fourth" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
     
-    [bubble addActionIcon:@"messenger-icon" tapCommand:^{
+    [bubble addActionIcon:@"messenger-icon" key:@"fifth" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
-    
+    [bubble activateIcon:@"fourth"];
     return YES;
 }
 
