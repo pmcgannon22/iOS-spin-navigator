@@ -27,14 +27,14 @@
     if (self) {
         self->angle = ang;
         [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bubbleTapped:)]];
-        //self.icon.alpha = 0.5;
+        self.alpha = 0.35;
     }
     return self;
 }
 
 - (void) setActive:(BOOL)isActive
 {
-    self.icon.alpha = isActive ? 1.0 : 0.5;
+    self.alpha = isActive ? 1.0 : 0.35;
 }
 
 - (void) bubbleTapped: (UITapGestureRecognizer*) recognizer

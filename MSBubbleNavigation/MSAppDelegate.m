@@ -46,7 +46,6 @@
     [bubble addActionIcon:@"messenger-icon" key:@"fifth" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
-    [bubble activateIcon:@"fourth"];
     return YES;
 }
 
