@@ -46,7 +46,7 @@
 
 - (CGPoint) calculatePosition:(CGPoint)center radius:(float)r
 {
-    float ang =   fmod(self->angle,2 * M_PI);
+    float ang =  self->angle; //fmod(self->angle,2 * M_PI);
     float x = r * cos(ang) + center.x;
     float y = r * -1 * sin(ang) + center.y;
     return CGPointMake(x, y);
@@ -83,8 +83,7 @@
     };
     
     if (self.layer) {
-        if(d_theta < 0)
-            d_theta = d_theta < 0 ? MAX(d_theta, -1*M_PI) : MIN(d_theta, M_PI);
+        d_theta = d_theta < 0 ? MAX(d_theta, -1*M_PI) : MIN(d_theta, M_PI);
         
         double endAngle = (self->angle + d_theta*4);
         CAAnimation *drop = [CAKeyframeAnimation
@@ -95,7 +94,7 @@
         
         drop.delegate = self;
         [self.layer addAnimation:drop forKey:[NSMutableString stringWithFormat:@"polar"]];
-        self->angle = fmod(endAngle,2*M_PI) + 2*M_PI;
+        self->angle = endAngle; //fmod(endAngle,2*M_PI) + 2*M_PI;
     }
     
 }

@@ -120,7 +120,8 @@
         if(recognizer.state == UIGestureRecognizerStateEnded) {
             CGPoint velocity = [recognizer velocityInView:self];
             float d_theta = -1 * velocity.y/(110*M_PI);
-            [_bubbles[key] animateAroundCenter:CGPointMake(35, 35) radius:55 d_theta:d_theta];
+            if(abs(d_theta) > 0.5)
+                [_bubbles[key] animateAroundCenter:CGPointMake(35, 35) radius:55 d_theta:d_theta];
         } else {
             float d_theta = translation.y/(110*M_PI);
             [_bubbles[key] changeAngle:d_theta center:CGPointMake(12, 15) radius:55];
