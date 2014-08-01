@@ -55,6 +55,7 @@
 - (void)resetIconPosition
 {
     int i = 0;
+    float step = M_PI/_bubbles.count;
     for (id key in _bubbles)
     {
         [_bubbles[key] moveToAngle:i*step+M_PI/2 center:CGPointMake(12, 15) radius:55];

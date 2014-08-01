@@ -31,15 +31,15 @@
         NSLog(@"asdfasdf");
     }];
     
-    [bubble addActionIcon:@"messenger-icon" key:@"second" tapCommand:^{
+    [bubble addActionIcon:@"admin-icon" key:@"second" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
     
-    [bubble addActionIcon:@"messenger-icon" key:@"third" tapCommand:^{
+    [bubble addActionIcon:@"mowa-icon" key:@"third" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
     
-    [bubble addActionIcon:@"messenger-icon" key:@"fourth" tapCommand:^{
+    [bubble addActionIcon:@"office-icon" key:@"fourth" tapCommand:^{
         NSLog(@"asdfasdf");
     }];
     
