@@ -52,6 +52,16 @@
     [self addSubview:action];
 }
 
+- (void)resetIconPosition
+{
+    int i = 0;
+    for (id key in _bubbles)
+    {
+        [_bubbles[key] moveToAngle:i*step+M_PI/2 center:CGPointMake(12, 15) radius:55];
+        i++;
+    }
+}
+
 - (void) activateIcon:(NSString*)name
 {
     if ([_bubbles objectForKey:name])

@@ -23,4 +23,6 @@ typedef void (^BubbleClickBlock)();
 
 - (void) activateIcon:(NSString*)name;
 
+- (void) resetIconPosition;
+
 @end
