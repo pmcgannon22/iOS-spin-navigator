@@ -23,7 +23,9 @@ typedef void (^BubbleClickBlock)();
 
 - (CGPoint) calculatePosition:(CGPoint)center radius:(float)r;
 
-- (void) setActive:(BOOL)isActive;
+- (void) setActiveIcon:(BOOL)isActive;
+
+- (BOOL) isActiveIcon;
 
 - (void) animateAroundCenter:(CGPoint)center radius:(CGFloat)radius d_theta:(CGFloat)d_theta;
 

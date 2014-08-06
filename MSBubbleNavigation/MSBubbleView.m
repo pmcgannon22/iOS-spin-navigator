@@ -10,8 +10,7 @@
 #import "math.h"
 #import "CAKeyframeAnimation+Polar.h"
 
-@implementation MSBubbleView 
-
+@implementation MSBubbleView
 
 - (id)initWithFrame:(CGRect)frame
 {

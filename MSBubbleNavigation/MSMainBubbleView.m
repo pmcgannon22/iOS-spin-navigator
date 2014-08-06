@@ -67,7 +67,7 @@
 {
     if ([_bubbles objectForKey:name])
     {
-        [_bubbles[name] setActive:YES];
+        [_bubbles[name] setActiveIcon:YES];
     }
 }
 
@@ -103,10 +103,6 @@
                              frame.origin.x = self.frame.origin.x + 50;
                              self.icon.alpha = 1.0;
                          } else {
-                             for(id key in _bubbles)
-                             {
-                                 [_bubbles[key] setActive:NO];
-                             }
                              frame.origin.x = self.frame.origin.x - 50;
                              self.icon.alpha = 0.6;
                          }
@@ -119,7 +115,9 @@
                         for(id key in _bubbles)
                         {
                             [_bubbles[key] setHidden:!self->active];
+                            [_bubbles[key] setAlpha:([_bubbles[key] isActiveIcon] ? 1.0 : 0.25)];
                         }
+                        
                     }
                 ];
 }

@@ -10,6 +10,7 @@
 
 @implementation MSMiniBubbleView {
     float angle;
+    BOOL iconActive;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -27,14 +28,19 @@
     if (self) {
         self->angle = ang;
         [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bubbleTapped:)]];
-        self.alpha = 0.35;
+        self.alpha = 0.25;
     }
     return self;
 }
 
-- (void) setActive:(BOOL)isActive
+- (void) setActiveIcon:(BOOL)isActive
 {
-    self.alpha = isActive ? 1.0 : 0.35;
+    self->iconActive = isActive;
+}
+
+- (BOOL) isActiveIcon
+{
+    return self->iconActive;
 }
 
 - (void) bubbleTapped: (UITapGestureRecognizer*) recognizer
